@@ -5,6 +5,7 @@ var expressLayouts = require('express-ejs-layouts');
 var argv = require('minimist')(process.argv.slice(2));
 
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 app.set('layout', 'layout'); // defaults to 'layout'
 app.locals.code = function(args) {
     var contents = args[0]
@@ -17,7 +18,7 @@ app.locals.code = function(args) {
 };
 
 app.use(expressLayouts);
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
     res.render('index', { category: undefined });

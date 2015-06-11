@@ -350,7 +350,7 @@ table.table th,
 .text-subhead {
   line-height: 1.2;
   margin: 8px 0;
-  margin: 0.5rem 0;
+  margin: 1rem 0 0.5rem;
 }
 .page-title:first-child,
 .text-title:first-child {
@@ -367,6 +367,7 @@ table.table th,
 }
 .text-subhead {
   font-size: 1.2em;
+  margin-top: 0.5rem;
 }
 .text-paragraph-title {
   font-size: 1.1em;
