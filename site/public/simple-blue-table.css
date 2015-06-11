@@ -216,17 +216,24 @@ a.current {
 [contenteditable]:focus {
   outline: 1px solid #e65730;
 }
-.selectable > *,
-.selectable a {
-  background: #2580a2;
-  color: #fff;
+.selectable > * {
+  border-left: 3px solid rgba(32,113,141,0.7);
   cursor: pointer;
+}
+.selectable > * > a {
+  color: inherit;
   text-decoration: none;
 }
-.selectable > *:hover,
-.selectable a:hover {
-  background: #8d203a;
-  color: #fff;
+.selectable > :hover {
+  background: rgba(221,221,221,0.3);
+  border-left-color: #20718d;
+}
+.selectable > .current {
+  border-left-color: #8d203a;
+  background: rgba(221,221,221,0.1);
+}
+.selectable > .current:hover {
+  background: rgba(221,221,221,0.3);
 }
 @media only screen and (max-width: 600px) {
   .hide-on-small-only,
