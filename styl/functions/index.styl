@@ -1,0 +1,27 @@
+@import '../node_modules/nib/lib/nib/border';
+@import '../node_modules/nib/lib/nib/clearfix';
+@import '../node_modules/nib/lib/nib/flex';
+@import '../node_modules/nib/lib/nib/gradients';
+@import '../node_modules/nib/lib/nib/image';
+@import '../node_modules/nib/lib/nib/overflow';
+@import '../node_modules/nib/lib/nib/positions';
+@import '../node_modules/nib/lib/nib/reset';
+@import '../node_modules/nib/lib/nib/size';
+@import '../node_modules/nib/lib/nib/vendor';
+
+$white-foreground-color ?= #FFF
+$black-foreground-color ?= #333
+
+$black-background-color ?= #111
+$white-background-color ?= #fafafa
+
+find-best-opposite-color($color, $breakcolor, $black-color, $white-color)
+    if lightness($color) > lightness($breakcolor)
+        return $black-color
+    return $white-color
+
+find-best-fg-color($background-color)
+    return find-best-opposite-color($background-color, #999999, $black-foreground-color, $white-foreground-color)
+
+find-best-bg-color($color)
+    return find-best-opposite-color($color, #AAAAAA, $black-background-color, $white-background-color)

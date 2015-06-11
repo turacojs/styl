@@ -1,0 +1,32 @@
+mark
+    background $highlight-background-color
+    padding 0.1rem 0.3rem
+
+.spelling-error
+    text-decoration underline /* for backwards compatibility */
+    text-decoration underline wavy $invalid-color
+
+.grammatical-error
+    text-decoration underline /* for backwards compatibility */
+    text-decoration underline wavy $valid-color
+
+
+em, i
+    font-style italic
+
+sub, sup
+    font-size 75%
+    line-height 0
+    position relative
+    vertical-align baseline
+
+sup
+    top -0.5em
+sub
+    bottom -0.25em
+
+
+abbr[title], dfn[title]
+    border-bottom 1px dotted
+    cursor help
+

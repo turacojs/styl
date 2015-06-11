@@ -1,0 +1,27 @@
+html
+    /* Prevents iOS text size adjust after orientation change, without disabling user zoom. */
+    text-size-adjust 100%
+
+html, body
+    if $page-100 or $table-layout
+        height 100%
+    else
+        min-height 100%
+
+body
+    font normal 100% $font-family
+    line-height: 1.5;
+    // http://stackoverflow.com/questions/11589985/webkit-text-aliasing-gets-weird-during-css3-animations
+    -webkit-backface-visibility hidden
+
+    @media only screen and (min-width: $small-screen)
+        font-size 85%
+
+    @media only screen and (min-width: $medium-screen)
+        font-size 90%
+
+    @media only screen and (min-width: $large-screen)
+        font-size 95%
+
+    color $body-color
+    background $body-background

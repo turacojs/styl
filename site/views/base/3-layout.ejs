@@ -1,0 +1,81 @@
+<h1 class="page-title">Layout</h1>
+
+<h2 class="text-title">Using grid</h2>
+
+<p>You can do layouts using <a href="/2-grid">the grid</a></p>
+
+<h3>Example 1: Two column, 20% - 80%</h3>
+
+<%- code`
+<div class="row">
+    <div class="col wp-20"></div>
+    <div class="col wp-80"></div>
+</div>
+` %>
+
+
+<h3>Example 2: Two column, 200px - variable</h3>
+
+<%- code`
+<div class="row">
+    <div class="col w-200"></div>
+    <div class="col"></div>
+</div>
+` %>
+
+
+<h2 class="text-title">Fixed column</h2>
+
+<p>If you want to use a scrollbar on a column with an overflow, and the global scrollbar for the main content</p>
+
+<h3>HTML</h3>
+<%- code`
+<div class="page-container">
+    <nav class="nav-col"></nav>
+    <main class="main-col"></main>
+</div>
+` %>
+
+<h3>Stylus</h3>
+<%- code`
+.left-col
+    fixed top left bottom
+    width 200px
+    overflow auto
+
+.main-col
+   margin-left 210px
+` %>
+
+
+<h2 class="text-title">Table layout</h2>
+
+<a href="http://colintoh.com/blog/display-table-anti-hero">CSS Layout with "display:table"</a>
+
+<p>Layout base on display table IE8+</p>
+
+<div class="row gut">
+    <div class="wp-50">
+        <iframe style="width: 100%; height: 200px" src="/table-layout.html"></iframe>
+    </div>
+    <div class="wp-50">
+        <iframe style="width: 100%; height: 200px" src="/table-layout2.html"></iframe>
+    </div>
+</div>
+
+<h3>HTML</h3>
+<%- code`
+<div class="page-container">
+    <header class="page-header"></header>
+    <div class="page-main row">
+        <nav class="col w-200"></nav>
+        <main class="col"></main>
+    </div>
+    <footer class="page-footer"></footer>
+</div>
+` %>
+
+<h3>Stylus</h3>
+<%- code`
+$table-layout = true
+` %>

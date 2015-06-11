@@ -1,0 +1,90 @@
+// base
+
+$base-border-radius ?= 2px
+
+// typography
+
+$page-title-color ?= false
+$page-title-fontsize ?= 1.8em
+$text-headline-fontsize ?= 1.5em
+$text-title-fontsize ?= 1.4em
+$text-subhead-fontsize ?= 1.2em
+$text-paragraph-title-fontsize ?= 1.1em
+
+// responsive
+
+$small-screen-up ?= 601px
+$medium-screen-up ?= 993px
+$large-screen-up ?= 1201px
+$small-screen ?= 600px
+$medium-screen ?= 992px
+$large-screen ?= 1200px
+
+$medium-and-up = "only screen and (min-width : " + $small-screen-up + ")"
+$large-and-up = "only screen and (min-width : " + $medium-screen-up + ")"
+$small-and-down = "only screen and (max-width : " + $small-screen + ")"
+$medium-and-down = "only screen and (max-width : " + $medium-screen + ")"
+$medium-only = "only screen and (min-width : " + $small-screen-up + ") and (max-width : " + $medium-screen + ")"
+
+// page
+
+$page-100 ?= false
+$body-color ?= #333
+$body-background ?= #FEFEFE
+$font-family ?= Roboto,Ubuntu,'Droid Sans','Segoe UI',Corbel,'Gill Sans','DejaVu Sans','Bitstream Vera Sans',Helvetica,Verdana,sans-serif;
+$font-monospace ?= 95% Menlo, Monaco, Consolas, monospace
+
+// interactions
+
+$interaction-default-color ?= #0000EE
+$interaction-hover-color ?= $interaction-default-color
+$interaction-current-color ?= $interaction-hover-color
+
+$interaction-default-background-color ?= $interaction-default-color
+$interaction-default-text-shadow ?= false
+$interaction-default-background-color ?= false
+$interaction-hover-background-color ?= $interaction-hover-color
+$interaction-current-background-color ?= $interaction-current-color
+
+
+// margins / paddings
+
+$default-top-bottom-margin ?= 0.5rem
+$default-top-bottom-padding ?= 0.2rem
+
+
+// contextual colors
+
+$primary-color ?= #333
+$highlight-background-color ?= #ff0
+$valid-color ?= green
+$invalid-color ?= red
+$warning-color ?= tomato
+$info-color ?= blue
+
+$disabled-color ?= #c7c7c7
+$disabled-border-color ?= #b9b8b9
+
+$blockquote-border-color ?= #333
+
+$table-border-color ?= #d0d0d0
+$table-striped-color ?= #f2f2f2
+
+// text : code
+
+$code-color ?= #000
+$code-background ?= #eee
+$code-border-radius ?= $base-border-radius
+
+$pre-color ?= #eee
+$pre-background ?= #444
+$pre-border-radius ?= $base-border-radius
+
+$kbd-color ?= #fff
+$kbd-background ?= #222
+$kbd-border-radius ?= $base-border-radius
+
+// list
+
+$list-border ?= 1px solid #E0E0E0
+$list-border-radius ?= $base-border-radius

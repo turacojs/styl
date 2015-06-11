@@ -1,0 +1,78 @@
+<h1 class="page-title">Getting Started</h1>
+
+<h2 class="text-title">Installation</h2>
+
+<h3 class="text-paragraph-title">NPM</h3>
+
+<pre><code>npm install --save turaco-styl</code></pre>
+
+<h3 class="text-paragraph-title">Bower</h3>
+
+<p>Even if I advise against it, you can find turaco using bower</p>
+
+<pre><code>bower install --save turaco-styl</code></pre>
+
+<h3 class="text-paragraph-title">CDN</h3>
+
+Todo.
+
+<h2 class="text-title">Setup</h2>
+
+<p>The next thing you need to do is create a webpage:</p>
+
+<%- code`
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Polyfills-->
+        <script>
+          'article aside footer header nav section time main'.replace(/\w+/g,function(n){document.createElement(n)})
+        </script>
+        <script src="//cdn.polyfill.io/v1/polyfill.min.js?features=all"></script>
+
+        <!--Import style -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500,300,200,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="/mysite.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    </head>
+
+    <body>
+        <div class="container-page">
+            <nav class="nav-col">
+            </nav>
+            <main class="main-col">
+                body
+            </main>
+        </div>
+    </body>
+</html>
+` %>
+
+<p>And create a stylus sheet:</p>
+
+<%- code`
+@require '../../styl/themes/simple-blue';
+$page-100 = false
+
+@require '../../styl/index';
+
+.nav-col
+    absolute
+    fixed top left bottom
+    width 200px
+    overflow auto
+
+.main-col
+   margin-left 210px
+
+` %>
+
+<p>
+    This is an example based on this site.
+    First thing you need to do is import the base theme you want, here <code>simple-blue</code>.
+    Then you can override or define some variables. After that, import the framework,
+    all of it with <code>index</code> or just parts you want.
+    You can see more layouts in <a href="/base/3-layouts">this page</a>.
+</p>

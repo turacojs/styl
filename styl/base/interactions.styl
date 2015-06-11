@@ -1,0 +1,43 @@
+a
+    color $interaction-default-color
+    text-decoration underline
+    word-wrap normal
+    hyphens manual
+    text-shadow $interaction-default-text-shadow if $interaction-default-text-shadow
+
+if $interaction-current-color == $interaction-hover-color
+    a:hover, a.current
+        color $interaction-current-color
+else
+    a.current
+        color $interaction-current-color
+    a:hover
+        color $interaction-hover-color
+
+
+[contenteditable]:hover
+    outline 1px dotted $interaction-hover-color
+
+[contenteditable]:focus
+    outline 1px solid $interaction-current-color
+
+.selectable
+    > *, a
+        background $interaction-default-background-color
+        color find-best-fg-color($interaction-default-background-color)
+        cursor pointer
+        text-decoration none
+
+if $interaction-hover-background-color
+    .selectable
+        > *, a
+            &:hover
+                background $interaction-hover-background-color
+                color find-best-fg-color($interaction-hover-background-color)
+
+
+if $interaction-current-background-color and (!$interaction-hover-background-color or $interaction-hover-background-color != $interaction-current-background-color)
+    .selectable
+        > .current, > .current a
+            background $interaction-current-background-color
+            color find-best-fg-color($interaction-current-background-color)

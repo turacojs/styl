@@ -1,0 +1,18 @@
+table.table
+    width 100%
+
+    thead
+        border-bottom 1px solid $table-border-color
+    th
+        @extends .bold
+        padding 1px
+
+    &.bordered tr
+        border-bottom 1px solid $table-border-color
+
+    &.striped
+        tbody tr:nth-child(odd)
+            background-color $table-striped-color
+    &.centered
+        thead tr th, tbody tr td
+            text-align center

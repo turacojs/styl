@@ -1,0 +1,31 @@
+
+blockquote
+    position relative
+    margin $default-top-bottom-margin 0
+    margin-right 1rem
+    padding $default-top-bottom-padding 1rem
+    border-left 5px solid $blockquote-border-color
+    background lightness($blockquote-border-color, 97%)
+
+    &::before, &::after
+        color $blockquote-border-color
+        font-size 40px
+
+    &::before
+        absolute top left 1px
+        content "“"
+    &::after
+        absolute top right 1px
+        content: "”"
+
+    footer:before
+        content: "- "
+
+q
+    &::before, &::after
+        color $blockquote-border-color
+        font-size 1.2em
+    &::before
+        content "“"
+    &::after
+        content: "”"

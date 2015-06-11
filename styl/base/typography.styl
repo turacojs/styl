@@ -1,0 +1,49 @@
+.thin
+    font-weight 200
+.light
+    font-weight 300
+.regular
+    font-weight 400
+.medium
+    font-weight 500
+.bold
+    font-weight 700
+
+
+.page-title, .text-headline, .text-title, .text-subhead
+    @extends .regular
+    line-height 1.2
+    margin 8px 0
+    margin .5rem 0
+
+.page-title:first-child, .text-title:first-child
+    margin-top 0
+
+.page-title
+    @extends .regular
+    font-size $page-title-fontsize
+    color $page-title-color if $page-title-color
+
+.text-headline
+    @extends .regular
+    font-size $text-headline-fontsize
+
+.text-title
+    @extends .medium
+    font-size $text-title-fontsize
+
+.text-subhead
+    @extends .regular
+    font-size $text-subhead-fontsize
+
+.text-paragraph-title
+    @extends .medium
+    font-size $text-paragraph-title-fontsize
+
+.text-button
+    @extends .medium
+    text-transform uppercase
+
+.text-caption
+    @extends .regular
+    font-size 0.8em

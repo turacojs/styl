@@ -1,0 +1,91 @@
+<h1 class="page-title">Forms</h1>
+
+<h2 class="text-title">Input text</h2>
+
+<a href="http://www.google.com/design/spec/components/text-fields.html">Material Design documentation on text fields</a>
+
+<h3 class="text-title">Single-line text field</h3>
+
+<div class="row spaced">
+    <div class="col wp-50">
+        <div class="input text">
+            <input name="user[firstName]" required="required" id="user-firstname" onkeyup="this.setAttribute('value', this.value);">
+            <label for="user-firstname">First Name</label>
+        </div>
+    </div>
+    <div class="col wp-50">
+        <div class="input text">
+            <input name="user[lastName]" required="required" id="user-lastname" onkeyup="this.setAttribute('value', this.value);">
+            <label for="user-lastname">Last Name</label>
+        </div>
+    </div>
+</div>
+
+<div class="input text email">
+    <input name="user[email]" type="email" placeholder="Email" required="required" id="user-email" onkeyup="this.setAttribute('value', this.value);">
+</div>
+
+<div class="input text">
+    <input name="user[disabled]" disabled="disabled" id="user-lastname" value="Disabled.">
+    <label for="user-disabled">Disabled</label>
+</div>
+
+
+<h3 class="text-title">Textarea</h3>
+
+<div class="input text textarea">
+    <textarea name="user[bio]" placeholder="Type anything you like here" id="user-bio" onkeyup="this.setAttribute('value', this.value);"></textarea>
+</div>
+
+<h2 class="text-title">Select</h2>
+
+<div class="row spaced">
+    <div class="col w-200">
+        <div class="input select">
+            <select>
+                <option>Value1</option>
+                <option>Value2</option>
+                <option>Value3</option>
+            </select>
+        </div>
+    </div>
+    <div class="col w-200">
+        <div class="input select">
+            <select disabled>
+                <option>Disabled</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<h2 class="text-title">Radio buttons</h2>
+
+<div class="row spaced">
+    <div class="col w-200">
+        <div class="input radio">
+            <input name="radiovalue" type="radio" value="value1" id="radio1"><label for="radio1">Value 1</label>
+        </div>
+        <div class="input radio">
+            <input name="radiovalue" type="radio" value="value2" id="radio2"><label for="radio2">Value 2</label>
+        </div>
+        <div class="input radio">
+            <input name="radiovalue" type="radio" value="value2" id="radio3" disabled><label for="radio3">Disabled</label>
+        </div>
+    </div>
+</div>
+
+<h2 class="text-title">Checkbox</h2>
+
+<div class="row spaced">
+    <div class="col w-200">
+        <div class="input radio">
+            <input name="checkboxvalue" type="checkbox" value="value1" id="checkbox1"><label for="checkbox1">Value 1</label>
+        </div>
+        <div class="input checkbox">
+            <input name="checkboxvalue" type="checkbox" value="value2" id="checkbox2"><label for="checkbox2">Value 2</label>
+        </div>
+        <div class="input checkbox">
+            <input name="checkboxvalue" type="checkbox" value="value2" id="checkbox3" disabled><label for="checkbox3">Disabled</label>
+        </div>
+    </div>
+</div>

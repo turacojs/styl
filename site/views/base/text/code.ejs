@@ -1,0 +1,66 @@
+<h1 class="page-title">Styling text: code</h1>
+
+<h2 class="text-title">&lt;code&gt;: computer code</h2>
+
+<p>The <a href="http://www.w3.org/TR/html-markup/code.html">code element</a>
+represents a fragment of computer code.</p>
+
+<p>For example, <code>&lt;code&gt;</code> is a HTML start tag.</p>
+
+<%- code`
+For example, <code>&amp;lt;code&amp;gt;</code> is a HTML start tag.
+` %>
+
+<h2 class="text-title">&lt;kbd&gt;: user imput</h2>
+
+<p>The <a href="http://www.w3.org/TR/html-markup/kbd.html">kbd element</a>
+represents user input, typically keyboard input, though it may also represent other input, such as voice commands.</p>
+
+<p>Save the document by pressing <kbd><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd></p>
+
+<%- code`
+Save the document by pressing <kbd><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd>
+` %>
+
+<h2 class="text-title">&lt;pre&gt;: Preformatted Text</h2>
+
+<p>The <a href="http://www.w3.org/TR/html-markup/pre.html">pre element</a>
+represents a block of preformatted text, in which structure is represented
+by typographic conventions rather than by elements.</p>
+
+<pre>
+body {
+  color: red;
+}
+</pre>
+
+<%- code`
+<pre>
+body {
+  color: red;
+}
+</pre>
+` %>
+
+<h2 class="text-title">&lt;var&gt;: variable or placeholder text</h2>
+
+<p>The <a href="http://www.w3.org/TR/html-markup/var.html">var element</a>
+represents either a variable in a mathematical expression or programming context,
+or placeholder text that the reader is meant to mentally replace with some other literal value.</p>
+
+<p>A simple equation: <var>x</var> = <var>y</var> + 2</p>
+
+<%- code`
+A simple equation: <var>x</var> = <var>y</var> + 2
+` %>
+
+<h2 class="text-title">&lt;samp&gt;: Sample output</h2>
+
+<p>The <a href="http://www.w3.org/TR/html-markup/samp.html">samp element</a>
+represents (sample) output from a program or computing system.</p>
+
+<p>The result is: <samp>Hello World !</samp></p>
+
+<%- code`
+The result is: <samp>Hello World !</samp>
+` %>

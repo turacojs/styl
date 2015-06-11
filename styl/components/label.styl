@@ -1,0 +1,25 @@
+.label
+    @extends .bold
+    display inline
+    padding 1px .4rem
+    background $primary-color
+    color find-best-fg-color($primary-color)
+    font-size 85%
+    line-height 1
+    text-align center
+    white-space nowrap
+    border-radius 5px
+    vertical-align baseline
+
+    &:empty
+    	display none
+
+    &.success
+        background $valid-color
+
+    &.error
+        background $invalid-color
+
+    &.warning
+        background $warning-color
+

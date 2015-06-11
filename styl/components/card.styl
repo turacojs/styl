@@ -1,0 +1,14 @@
+$card-background ?= #fff
+$card-padding ?= 1.5 rem
+
+.card
+    position relative
+    overflow hidden
+    background $card-background
+    z-depth-1()
+
+    .card-title
+        @extends .light
+
+    > .content
+        padding $card-padding

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Polyfills-->
+        <script>
+          'article aside footer header nav section time main'.replace(/\w+/g,function(n){document.createElement(n)})
+        </script>
+        <script src="//cdn.polyfill.io/v1/polyfill.min.js?features=all"></script>
+
+        <!--Import style -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500,300,100,500italic,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="/simple-blue.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    </head>
+
+    <body>
+        <div class="container-page">
+            <nav class="nav-col">
+                <ul class="list links">
+                <% for (var elt of [
+                    {
+                        name: 'About',
+                        url: '/'
+                    },
+                    {
+                        name: 'Get Started',
+                        url: '/getting-started'
+                    },
+                    {
+                        name: 'CSS',
+                        show: category === 'base',
+                        collection: [
+                            { name: 'Typography', url: '/base/1-typography' },
+                            { name: 'Text: paragraphs', url: '/base/text/paragraphs' },
+                            { name: 'Text: Inline elements', url: '/base/text/inline' },
+                            { name: 'Text: Alignments', url: '/base/text/alignments' },
+                            { name: 'Text: Citations', url: '/base/text/citations' },
+                            { name: 'Text: Code', url: '/base/text/code' },
+                            { name: 'Grid', url: '/base/2-grid' },
+                            { name: 'Layout', url: '/base/3-layout' },
+                            { name: 'Forms', url: '/base/4-forms' },
+                            { name: 'Lists', url: '/base/5-lists' },
+                            { name: 'Tables', url: '/base/6-tables' }
+                        ]
+                    },
+                    {
+                        name: 'Components',
+                        show: category === 'components',
+                        collection: [
+                            { name: 'Badge', url: '/components/badge' },
+                            { name: 'Button', url: '/components/button' },
+                            { name: 'Card', url: '/components/card' },
+                            { name: 'Dropdown', url: '/components/dropdown' },
+                            { name: 'Navbar', url: '/components/navbar' },
+                            { name: 'Label', url: '/components/label' },
+                        ]
+                    }
+                ]) { %>
+                    <li>
+                        <% if (elt.url) { %>
+                            <a href="<%= elt.url %>"><%= elt.name %></a>
+                        <% } else { %>
+                            <a onclick="var s = this.nextElementSibling.style; s.display = s.display === 'none' ? 'block' : 'none' "><%= elt.name %></a>
+                            <ul class="list links"<% if (!elt.show) { %> style="display: none"<% } %>>
+                                <% for (var subelt of elt.collection) { %>
+                                    <li>
+                                        <a href="<%= subelt.url %>"><%= subelt.name %></a>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        <% } %>
+                    </li>
+                <% } %>
+                </ul>
+            </nav>
+            <main class="main-col">
+                <%- body %>
+            </main>
+        </div>
+    </body>
+</html>
+

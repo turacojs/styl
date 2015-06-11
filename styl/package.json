@@ -1,0 +1,19 @@
+{
+  "name": "turaco-styl",
+  "version": "0.0.1",
+  "description": "A modern responsive components-oriented framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git://github.com/turacojs/styl.git",
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/turacojs/styl/issues"
+  },
+  "homepage": "https://github.com/turacojs/styl",
+  "dependencies": {
+    "nib": "^1.1.0"
+  }
+}
