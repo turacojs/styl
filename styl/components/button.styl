@@ -1,7 +1,6 @@
 $button-background ?= $primary-color
 $button-color ?= find-best-fg-color($button-background)
 $button-border ?= none
-$button-boxShadow ?= false
 $button-topBottom-padding ?= $interaction-topBottom-padding
 $button-leftRight-padding ?= 1rem
 $button-hover-background ?= lighten($button-background, 5%);
@@ -19,12 +18,12 @@ button, input.submit
     appearance none
 
 input.submit, button, .button
-    z-depth-1()
+    display inline-block
     background $button-background
-    border-radius 2px
     font inherit
     text-button()
-    box-shadow $button-boxShadow
+    z-depth-1()
+    border-radius 2px
     border $button-border
     color $button-color
     text-shadow $button-textShadow

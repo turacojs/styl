@@ -1143,16 +1143,15 @@ input.submit {
 input.submit,
 button,
 .button {
-  -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
-  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
+  display: inline-block;
   background: #2580a2;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
   font: inherit;
   font-weight: 500;
   text-transform: uppercase;
-  -webkit-box-shadow: false;
-  box-shadow: false;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
   border: none;
   color: #fff;
   text-shadow: $button-textShadow;
