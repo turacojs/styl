@@ -1,0 +1,66 @@
+$button-background ?= $primary-color
+$button-color ?= find-best-fg-color($button-background)
+$button-border ?= none
+$button-boxShadow ?= false
+$button-topBottom-padding ?= $interaction-topBottom-padding
+$button-leftRight-padding ?= 1rem
+$button-hover-background ?= lighten($button-background, 5%);
+$button-hover-color ?= $button-color
+$button-hover-border ?= false
+$button-focus-background ?= false
+$button-disabled-background ?= #DFDFDF
+$button-disabled-color ?= #555555
+
+$button-flat-color ?= $primary-color
+$button-flat-disabled-color ?= $disabled-color
+$button-flat-hover-color ?= darken($button-flat-color, 10%);
+
+button, input.submit
+    appearance none
+
+input.submit, button, .button
+    z-depth-1()
+    background $button-background
+    border-radius 2px
+    font inherit
+    text-button()
+    box-shadow $button-boxShadow
+    border $button-border
+    color $button-color
+    text-shadow $button-textShadow
+    padding $button-topBottom-padding $button-leftRight-padding
+    cursor pointer
+    transition all .4s
+    text-decoration none
+    vertical-align middle
+    line-height 1.2
+
+    &.wp-100
+        width 100%
+        text-align center
+
+    &:hover
+        background $button-hover-background
+        color $button-hover-color
+        border $button-hover-border
+        z-depth-1-hover()
+
+
+input.submit:disabled, button.disabled, .button.disabled
+    background $button-disabled-background
+    color $button-disabled-color
+    box-shadow none
+    cursor default
+
+    &:hover
+        background $button-disabled-background
+        color $button-disabled-color
+
+button.flat, .button.flat
+    box-shadow none
+    background-color transparent
+    color $button-flat-color
+
+    &.disabled
+        background-color transparent
+        color $button-flat-disabled-color
