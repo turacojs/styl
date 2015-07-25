@@ -128,14 +128,14 @@ audio:not([controls]),
 .hide {
   display: none !important;
 }
-.left-align {
+.align-left {
   text-align: left;
 }
-.right-align {
+.align-right {
   text-align: right;
 }
 .center,
-.center-align {
+.align-center {
   text-align: center;
 }
 .float-left {
