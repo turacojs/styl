@@ -1097,6 +1097,7 @@ table.table.centered tbody tr td {
   box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
 }
 .card .card-title {
+  margin-top: 0;
   font-weight: 300;
 }
 .card > .content {
@@ -1167,6 +1168,7 @@ button:hover,
   box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2), 0 3px 7px 0 rgba(0,0,0,0.25);
 }
 input.submit:disabled,
+button[disabled],
 button.disabled,
 .button.disabled {
   background: #dfdfdf;
@@ -1176,6 +1178,7 @@ button.disabled,
   cursor: default;
 }
 input.submit:disabled:hover,
+button[disabled]:hover,
 button.disabled:hover,
 .button.disabled:hover {
   background: #dfdfdf;
@@ -1201,6 +1204,7 @@ button.flat.disabled,
   box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
 }
 .card .card-title {
+  margin-top: 0;
   font-weight: 300;
 }
 .card > .content {
