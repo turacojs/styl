@@ -1,25 +1,25 @@
 {
-  "name": "site", 
-  "private": true, 
-  "version": "0.0.6", 
-  "description": "Turaco Styl site", 
-  "main": "index.js", 
+  "name": "site",
+  "private": true,
+  "version": "0.0.7",
+  "description": "Turaco Styl site",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }, 
-  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)", 
-  "license": "MIT", 
+  },
+  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
+  "license": "MIT",
   "dependencies": {
-    "ejs": "^2.3.1", 
-    "express": "^4.12.3", 
-    "express-ejs-layouts": "^1.1.0", 
+    "ejs": "^2.3.1",
+    "express": "^4.12.3",
+    "express-ejs-layouts": "^1.1.0",
     "minimist": "^1.1.1"
-  }, 
+  },
   "devDependencies": {
-    "browser-sync": "^2.7.1", 
-    "gulp": "gulpjs/gulp#4.0", 
-    "gulp-grep": "^0.2.0", 
-    "gulp-sourcemaps": "^1.5.2", 
+    "browser-sync": "^2.7.1",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-grep": "^0.2.0",
+    "gulp-sourcemaps": "^1.5.2",
     "gulp-stylus": "^2.0.1"
   }
 }
