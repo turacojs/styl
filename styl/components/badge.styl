@@ -1,17 +1,15 @@
+@import "label.styl"
+
 $badge-color ?= #777
 
+/* Used to display a number of items eg Messages (10) */
 .badge
-    bold()
-    display inline
-    padding 1px .4rem
+    @extend .label
     background $badge-color
     color find-best-fg-color($badge-color)
-    font-size 85%
-    line-height 1
-    text-align center
-    white-space nowrap
     border-radius 1em
-    vertical-align baseline
+    vertical-align middle
+    margin-top -2px
 
     &:empty
     	display none

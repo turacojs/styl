@@ -1,18 +1,15 @@
 .label
     bold()
-    display inline
-    padding 1px .4rem
-    background $primary-color
-    color find-best-fg-color($primary-color)
-    font-size 85%
-    line-height 1
+    display inline-block
+    padding .1em .4rem
+    font-size 80%
+    font-size .8em
+    line-height inherit
     text-align center
     white-space nowrap
-    border-radius 5px
     vertical-align baseline
-
-    &:empty
-    	display none
+    background $primary-color
+    color find-best-fg-color($primary-color)
 
     &.success
         background $valid-color

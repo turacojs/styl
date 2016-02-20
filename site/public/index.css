@@ -303,6 +303,7 @@ body {
 }
 body {
   font: normal 100% Roboto, Ubuntu, 'Droid Sans', 'Segoe UI', Corbel, 'Gill Sans', 'DejaVu Sans', 'Bitstream Vera Sans', Helvetica, Verdana, sans-serif;
+  font-display: block;
   line-height: 1.5;
   -webkit-backface-visibility: hidden;
   color: #333;
@@ -1103,19 +1104,39 @@ table.table.centered tbody tr td {
 .card > .content {
   padding: 1.5rem;
 }
+.label,
 .badge {
   font-weight: 700;
-  display: inline;
-  padding: 1px 0.4rem;
-  background: #777;
-  color: #fff;
-  font-size: 85%;
-  line-height: 1;
+  display: inline-block;
+  padding: 0.1em 0.4rem;
+  font-size: 80%;
+  font-size: 0.8em;
+  line-height: inherit;
   text-align: center;
   white-space: nowrap;
+  vertical-align: baseline;
+  background: #333;
+  color: #fff;
+}
+.label.success,
+.badge.success {
+  background: #008000;
+}
+.label.error,
+.badge.error {
+  background: #f00;
+}
+.label.warning,
+.badge.warning {
+  background: #ff6347;
+}
+.badge {
+  background: #777;
+  color: #fff;
   -webkit-border-radius: 1em;
   border-radius: 1em;
-  vertical-align: baseline;
+  vertical-align: middle;
+  margin-top: -2px;
 }
 .badge:empty {
   display: none;
@@ -1212,20 +1233,16 @@ button.flat.disabled,
 }
 .label {
   font-weight: 700;
-  display: inline;
-  padding: 1px 0.4rem;
-  background: #333;
-  color: #fff;
-  font-size: 85%;
-  line-height: 1;
+  display: inline-block;
+  padding: 0.1em 0.4rem;
+  font-size: 80%;
+  font-size: 0.8em;
+  line-height: inherit;
   text-align: center;
   white-space: nowrap;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
   vertical-align: baseline;
-}
-.label:empty {
-  display: none;
+  background: #333;
+  color: #fff;
 }
 .label.success {
   background: #008000;
