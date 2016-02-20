@@ -1,3 +1,15 @@
+<script>
+function updateInputClasses(input) {
+    var value = input.value;
+    if (value) {
+        input.classList.add('has-value');
+        input.classList.remove('has-empty-value');
+    } else {
+        input.classList.add('has-empty-value');
+    }
+}
+</script>
+
 <h1 class="page-title">Forms</h1>
 
 <h2 class="text-title">Input text</h2>
@@ -9,20 +21,20 @@
 <div class="row spaced">
     <div class="col wp-50">
         <div class="input text">
-            <input name="user[firstName]" required="required" id="user-firstname" onkeyup="this.setAttribute('value', this.value);">
+            <input name="user[firstName]" required="required" id="user-firstname" onkeyup="updateInputClasses(this)">
             <label for="user-firstname">First Name</label>
         </div>
     </div>
     <div class="col wp-50">
         <div class="input text">
-            <input name="user[lastName]" required="required" id="user-lastname" onkeyup="this.setAttribute('value', this.value);">
+            <input name="user[lastName]" required="required" id="user-lastname" onkeyup="updateInputClasses(this)">
             <label for="user-lastname">Last Name</label>
         </div>
     </div>
 </div>
 
 <div class="input text email">
-    <input name="user[email]" type="email" placeholder="Email" required="required" id="user-email" onkeyup="this.setAttribute('value', this.value);">
+    <input name="user[email]" type="email" placeholder="Email" required="required" id="user-email" onkeyup="updateInputClasses(this)">
 </div>
 
 <div class="input text">
@@ -34,7 +46,7 @@
 <h3 class="text-title">Textarea</h3>
 
 <div class="input text textarea">
-    <textarea name="user[bio]" placeholder="Type anything you like here" id="user-bio" onkeyup="this.setAttribute('value', this.value);"></textarea>
+    <textarea name="user[bio]" placeholder="Type anything you like here" id="user-bio" onkeyup="updateInputClasses(this)"></textarea>
 </div>
 
 <h2 class="text-title">Select</h2>

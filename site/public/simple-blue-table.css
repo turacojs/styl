@@ -880,12 +880,12 @@ table.table.centered tbody tr td {
   -ms-transition: color 0.1s;
   transition: color 0.1s;
 }
-.input.text input:not([value]) + label,
-.input.text textarea:not([value]) + label,
-.input select:not([value]) + label,
-.input.text input[value=""] + label,
-.input.text textarea[value=""] + label,
-.input select[value=""] + label {
+.input.text input:not(.has-value) + label,
+.input.text textarea:not(.has-value) + label,
+.input select:not(.has-value) + label,
+.input.text input.has-empty-value + label,
+.input.text textarea.has-empty-value + label,
+.input select.has-empty-value + label {
   top: 16px;
   top: 1rem;
   height: 32px;
@@ -904,9 +904,9 @@ table.table.centered tbody tr td {
 .input.text input:focus,
 .input.text textarea:focus,
 .input select:focus,
-.input.text input:focus:invalid:not([value]),
-.input.text textarea:focus:invalid:not([value]),
-.input select:focus:invalid:not([value]) {
+.input.text input:focus:invalid:not(.has-value),
+.input.text textarea:focus:invalid:not(.has-value),
+.input select:focus:invalid:not(.has-value) {
   border-bottom: 1px solid #2580a2;
   -webkit-box-shadow: 0 1px 0 0 #2580a2;
   box-shadow: 0 1px 0 0 #2580a2;
@@ -938,16 +938,16 @@ table.table.centered tbody tr td {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.input.text input:invalid[value],
-.input.text textarea:invalid[value],
-.input select:invalid[value] {
+.input.text input.has-value:invalid,
+.input.text textarea.has-value:invalid,
+.input select.has-value:invalid {
   border-bottom: 1px solid #f00;
   -webkit-box-shadow: 0 1px 0 0 #f00;
   box-shadow: 0 1px 0 0 #f00;
 }
-.input.text input:focus:invalid[value] + label,
-.input.text textarea:focus:invalid[value] + label,
-.input select:focus:invalid[value] + label {
+.input.text input.has-value:focus:invalid + label,
+.input.text textarea.has-value:focus:invalid + label,
+.input select.has-value:focus:invalid + label {
   color: #f00;
 }
 .input select {

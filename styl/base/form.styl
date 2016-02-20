@@ -41,7 +41,7 @@ placeholder(color #bdbdbd,)
         color #bdbdbd
         transition color .1s
 
-    &:not([value]) + label, &[value=""] + label
+    &:not(.has-value) + label, &.has-empty-value + label
         top 16px
         top 1rem
         height 32px
@@ -53,7 +53,7 @@ placeholder(color #bdbdbd,)
         cursor text
         transition all .3s
 
-    &:focus, &:focus:invalid:not([value])
+    &:focus, &:focus:invalid:not(.has-value)
         border-bottom 1px solid $primary-color
         box-shadow 0 1px 0 0 $primary-color
 
@@ -71,11 +71,11 @@ placeholder(color #bdbdbd,)
     &:invalid
         box-shadow none
 
-    &:invalid[value]
+    &.has-value:invalid
         border-bottom 1px solid $invalid-color
         box-shadow 0 1px 0 0 $invalid-color
 
-    &:focus:invalid[value] + label
+    &.has-value:focus:invalid + label
         color $invalid-color
 
 .input
