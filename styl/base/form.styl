@@ -40,7 +40,7 @@ placeholder(color #bdbdbd,)
 
     + label
         absolute left
-        color #bdbdbd
+        color $form-label-unfocused-color
         transition color .1s
 
     &:not(.has-value) + label, &.has-empty-value + label
@@ -51,13 +51,17 @@ placeholder(color #bdbdbd,)
         line-height 32px
         line-height 2rem
         font-size 100%
-        color #bdbdbd
+        color $form-label-placeholder-color
         cursor text
         transition all .3s
 
+    &:hover, &:hover:invalid:not(.has-value)
+        border-bottom-color $form-hover-border-color if $form-hover-border-color
+
+
     &:focus, &:focus:invalid:not(.has-value)
-        border-bottom 1px solid $primary-color
-        box-shadow 0 1px 0 0 $primary-color
+        border-bottom-color $form-focus-border-color if $form-focus-border-color
+        box-shadow 0 1px 0 0 $form-focus-shadow-color if $form-focus-shadow-color
 
     + label, &:focus + label, &[placeholder] + label
         top 1px
@@ -67,7 +71,7 @@ placeholder(color #bdbdbd,)
         cursor default
 
     &:focus + label
-        color $primary-color
+        color $form-focus-label-color
         outline none
 
     &:invalid
@@ -205,9 +209,9 @@ placeholder(color #bdbdbd,)
             border-color $disabled-color
 
 fieldset
-    border $form-default-border
+    border $form-fieldset-border if $form-fieldset-border
     margin $default-top-bottom-margin
-    padding $form-fieldset-padding
+    padding $form-fieldset-padding if $form-fieldset-padding
 
 legend
     medium()

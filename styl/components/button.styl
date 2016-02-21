@@ -19,14 +19,14 @@ button, input.submit
 
 input.submit, button, .button
     display inline-block
-    background $button-background
+    background $button-background if $button-background
     font inherit
     text-button()
     z-depth-1()
     border-radius 2px
-    border $button-border
-    color $button-color
-    text-shadow $button-textShadow
+    border $button-border if $button-border
+    color $button-color if $button-color
+    text-shadow $button-textShadow if $button-textShadow
     padding $button-topBottom-padding $button-leftRight-padding
     cursor pointer
     transition all .4s
@@ -39,9 +39,9 @@ input.submit, button, .button
         text-align center
 
     &:hover
-        background $button-hover-background
-        color $button-hover-color
-        border $button-hover-border
+        background $button-hover-background if $button-hover-background
+        color $button-hover-color if $button-hover-color
+        border $button-hover-border if $button-hover-border
         z-depth-1-hover()
 
 
@@ -58,8 +58,8 @@ input.submit:disabled, button[disabled], button.disabled, .button.disabled
 button.flat, .button.flat
     box-shadow none
     background-color transparent
-    color $button-flat-color
+    color $button-flat-color if $button-flat-color
 
     &.disabled
         background-color transparent
-        color $button-flat-disabled-color
+        color $button-flat-disabled-color if $button-flat-disabled-color

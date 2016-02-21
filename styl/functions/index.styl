@@ -15,13 +15,13 @@ $black-foreground-color ?= #333
 $black-background-color ?= #111
 $white-background-color ?= #fafafa
 
-find-best-opposite-color($color, $breakcolor, $black-color, $white-color)
-    if lightness($color) > lightness($breakcolor)
+find-best-opposite-color($color, $maxLightness, $black-color, $white-color)
+    if lightness($color) > $maxLightness
         return $black-color
     return $white-color
 
-find-best-fg-color($background-color)
-    return find-best-opposite-color($background-color, #999999, $black-foreground-color, $white-foreground-color)
+find-best-fg-color($background-color, $maxLightness = 63%)
+    return find-best-opposite-color($background-color, $maxLightness, $black-foreground-color, $white-foreground-color)
 
-find-best-bg-color($color)
-    return find-best-opposite-color($color, #AAAAAA, $black-background-color, $white-background-color)
+find-best-bg-color($color, $maxLightness = 67%)
+    return find-best-opposite-color($color, $maxLightness, $black-background-color, $white-background-color)

@@ -27,15 +27,17 @@ bold()
 .text-headline
     regular()
     font-size $text-headline-fontsize
+    color $text-headline-color if $text-headline-color
 
 .text-title
     medium()
     font-size $text-title-fontsize
+    color $text-title-color if $text-title-color
 
 .text-subhead
     regular()
     font-size $text-subhead-fontsize
-    margin-top $default-top-bottom-margin
+    margin-top $default-top-bottom-margin if $default-top-bottom-margin
 
 .text-paragraph-title
     medium()
