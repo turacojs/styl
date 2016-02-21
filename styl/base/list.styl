@@ -9,8 +9,9 @@
     > *
         margin 0
         padding .4rem .8rem
-        background #fff
-        border-bottom 1px solid #e0e0e0
+        color $list-item-color
+        background $list-item-background
+        border-bottom $list-border
 
         &:last-child
             border-bottom none
@@ -40,3 +41,13 @@
     border-left none
     border-right none
     margin 0 0 0 5px
+
+.list.vertical
+    display inline-block
+    margin-bottom $default-top-bottom-margin
+    > *
+        display inline-block
+        border-right $list-border
+
+        &:last-child
+            border-right none

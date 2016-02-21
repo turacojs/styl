@@ -307,7 +307,7 @@ body {
   line-height: 1.5;
   -webkit-backface-visibility: hidden;
   color: #333;
-  background: #fefefe;
+  background: #fff;
 }
 @media only screen and (min-width: 600px) {
   body {
@@ -760,6 +760,7 @@ dfn[title] {
 .list > * {
   margin: 0;
   padding: 0.4rem 0.8rem;
+  color: #333;
   background: #fff;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -792,6 +793,17 @@ dfn[title] {
   border-left: none;
   border-right: none;
   margin: 0 0 0 5px;
+}
+.list.vertical {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.list.vertical > * {
+  display: inline-block;
+  border-right: 1px solid #e0e0e0;
+}
+.list.vertical > *:last-child {
+  border-right: none;
 }
 table.table {
   width: 100%;
@@ -1105,6 +1117,9 @@ table.table.centered tbody tr td {
 .input [type="checkbox"]:disabled:not(:checked) + label:before {
   border-color: #c7c7c7;
 }
+.navbar > li {
+  display: inline-block;
+}
 .card {
   position: relative;
   overflow: hidden;
@@ -1246,6 +1261,49 @@ button.flat.disabled,
 .card > .content {
   padding: 1.5rem;
 }
+.dropdown {
+  position: relative;
+}
+.dropdown > ul {
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
+  margin: 0 !important;
+  visibility: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  -webkit-transition: visibility 0s linear 0.2s, opacity 0.3s;
+  -moz-transition: visibility 0s linear 0.2s, opacity 0.3s;
+  -o-transition: visibility 0s linear 0.2s, opacity 0.3s;
+  -ms-transition: visibility 0s linear 0.2s, opacity 0.3s;
+  transition: visibility 0s linear 0.2s, opacity 0.3s;
+}
+.dropdown:hover > ul,
+.dropdown .open {
+  visibility: visible;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.dropdown.button::after {
+  display: inline-block;
+  content: "▼";
+  font-size: 0.7em;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+  border-left: 1px solid;
+  padding-left: 0.3rem;
+}
 .label {
   font-weight: 700;
   display: inline-block;
@@ -1267,6 +1325,9 @@ button.flat.disabled,
 }
 .label.warning {
   background: #ff6347;
+}
+.navbar > li {
+  display: inline-block;
 }
 .nav-col {
   position: fixed;
