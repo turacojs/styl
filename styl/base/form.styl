@@ -1,5 +1,7 @@
 
+
 placeholder(color #bdbdbd,)
+
 
 .input
     position relative
@@ -29,7 +31,7 @@ placeholder(color #bdbdbd,)
     font-size 100%
     font-family inherit
     border 0
-    border-bottom 1px solid #cfd0d1
+    border-bottom $form-default-border
     background-color inherit
     transition all .3s
     outline none
@@ -202,4 +204,11 @@ placeholder(color #bdbdbd,)
         &:not(:checked) + label:before
             border-color $disabled-color
 
+fieldset
+    border $form-default-border
+    margin $default-top-bottom-margin
+    padding $form-fieldset-padding
 
+legend
+    medium()
+    padding $form-legend-padding
