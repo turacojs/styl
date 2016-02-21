@@ -1280,7 +1280,7 @@ button.flat.disabled,
   -ms-transition-delay: 0s;
   transition-delay: 0s;
 }
-.dropdown.button::after {
+.dropdown::after {
   display: inline-block;
   content: "▼";
   font-size: 0.7em;
