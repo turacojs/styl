@@ -1,49 +1,67 @@
-.hide-on-small-only, .hide-on-small-and-down
-    @media $small-and-down
+$extra-small-screen-up = $small-screen - 1px
+$small-screen-up = $medium-screen - 1px
+$medium-screen-up = $large-screen - 1px
+
+$extra-small-only = "only screen and (max-width : " + $extra-small-screen-up + ")"
+$small-only = "only screen and (min-width : " + $small-screen + ") and (max-width : " + $small-screen-up + ")"
+$medium-only = "only screen and (min-width : " + $medium-screen + ") and (max-width : " + $medium-screen-up + ")"
+$large-only = "only screen and (min-width : " + $large-screen + ")"
+
+$small-and-up = "only screen and (min-width : " + $small-screen + ")"
+$medium-and-up = "only screen and (min-width : " + $medium-screen + ")"
+$small-and-down = "only screen and (max-width : " + $small-screen-up + ")"
+$medium-and-down = "only screen and (max-width : " + $medium-screen-up + ")"
+
+@media $extra-small-only
+    .hide-on-extra-small-only
         display none !important
-
-.hide-on-medium-and-down
-    @media $medium-and-down
-        display none !important
-
-.hide-on-medium-and-up
-    @media $medium-and-up
-        display none !important
-
-.hide-on-medium-only
-    @media only screen and (min-width: $small-screen) and (max-width: $medium-screen)
-        display none !important
-
-
-.hide-on-large-only
-    @media $large-and-up
-        display none !important
-
-.show-on-large
-    @media $large-and-up
+    .show-on-extra-small-only
         display initial !important
 
-.show-on-medium
-    @media only screen and (min-width: $small-screen) and (max-width: $medium-screen)
+@media $small-only
+    .hide-on-small-only
+        display none !important
+    .show-on-small-only
         display initial !important
 
-
-.show-on-small
-    @media $small-and-down
+@media $medium-only
+    .hide-on-medium-only
+        display none !important
+    .show-on-medium-only
         display initial !important
 
-.show-on-medium-and-up
-    @media $medium-and-up
+@media $large-and-up
+    .hide-on-large-only
+        display none !important
+    .show-on-large-only
         display initial !important
 
-.show-on-medium-and-down
-    @media $medium-and-down
+@media $large-and-up
+    .hide-on-small-and-down
+        display none !important
+    .show-on-small-and-down
         display initial !important
 
+@media $medium-and-down
+    .hide-on-medium-and-down
+        display none !important
+    .show-on-medium-and-down
+        display initial !important
 
+@media $small-and-up
+    .hide-on-small-and-up
+        display none !important
+    .show-on-small-and-up
+        display initial !important
+
+@media $medium-and-up
+    .hide-on-medium-and-up
+        display none !important
+    .show-on-medium-and-up
+        display initial !important
 
 // Center text on mobile
-.center-on-small-only
+.center-on-extra-small-only
     @media $small-and-down
         text-align: center;
 

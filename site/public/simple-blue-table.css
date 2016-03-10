@@ -235,59 +235,72 @@ a.current {
 .selectable > .current:hover {
   background: rgba(221,221,221,0.3);
 }
-@media only screen and (max-width: 600px) {
-  .hide-on-small-only,
-  .hide-on-small-and-down {
+@media only screen and (max-width: 599px) {
+  .hide-on-extra-small-only {
     display: none !important;
   }
-}
-@media only screen and (max-width: 992px) {
-  .hide-on-medium-and-down {
-    display: none !important;
+  .show-on-extra-small-only {
+    display: initial !important;
   }
 }
-@media only screen and (min-width: 601px) {
-  .hide-on-medium-and-up {
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+  .hide-on-small-only {
     display: none !important;
   }
+  .show-on-small-only {
+    display: initial !important;
+  }
 }
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   .hide-on-medium-only {
     display: none !important;
   }
+  .show-on-medium-only {
+    display: initial !important;
+  }
 }
-@media only screen and (min-width: 993px) {
+@media $large-and-up {
   .hide-on-large-only {
     display: none !important;
   }
-}
-@media only screen and (min-width: 993px) {
-  .show-on-large {
+  .show-on-large-only {
     display: initial !important;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 992px) {
-  .show-on-medium {
+@media $large-and-up {
+  .hide-on-small-and-down {
+    display: none !important;
+  }
+  .show-on-small-and-down {
     display: initial !important;
   }
 }
-@media only screen and (max-width: 600px) {
-  .show-on-small {
-    display: initial !important;
+@media only screen and (max-width: 1199px) {
+  .hide-on-medium-and-down {
+    display: none !important;
   }
-}
-@media only screen and (min-width: 601px) {
-  .show-on-medium-and-up {
-    display: initial !important;
-  }
-}
-@media only screen and (max-width: 992px) {
   .show-on-medium-and-down {
     display: initial !important;
   }
 }
-@media only screen and (max-width: 600px) {
-  .center-on-small-only {
+@media only screen and (min-width: 600px) {
+  .hide-on-small-and-up {
+    display: none !important;
+  }
+  .show-on-small-and-up {
+    display: initial !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hide-on-medium-and-up {
+    display: none !important;
+  }
+  .show-on-medium-and-up {
+    display: initial !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .center-on-extra-small-only {
     text-align: center;
   }
 }
@@ -382,7 +395,7 @@ body {
   width: 100%;
 }
 .page-footer {
-  padding-top: 20px;
+  padding-top: 1rem;
   background-color: $footer-bg-color;
 }
 .page-footer .footer-copyright {
@@ -390,6 +403,28 @@ body {
   color: rgba(255,255,255,0.8);
   background-color: rgba(51,51,51,0.08);
   font-weight: 300;
+}
+.container-fluid,
+.container-fixed {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  .container-fixed {
+    width: 600px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container-fixed {
+    width: 992px;
+  }
+}
+@media $large-and-up {
+  .container-fixed {
+    width: 1200px;
+  }
 }
 .row {
   display: table;
@@ -611,7 +646,7 @@ body {
   width: 66.66%;
   *width: 66.6%;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 991px) {
   .row-responsive {
     display: block;
   }
@@ -919,7 +954,7 @@ table.table.centered tbody tr td {
 .input.text input:focus:invalid:not(.has-value),
 .input.text textarea:focus:invalid:not(.has-value),
 .input select:focus:invalid:not(.has-value) {
-  border-bottom: 1px solid #2580a2;
+  border-bottom-color: #2580a2;
   -webkit-box-shadow: 0 1px 0 0 #2580a2;
   box-shadow: 0 1px 0 0 #2580a2;
 }
@@ -1223,7 +1258,6 @@ button:hover,
 .button:hover {
   background: #288aaf;
   color: #fff;
-  border: false;
   -webkit-box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2), 0 3px 7px 0 rgba(0,0,0,0.25);
   box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2), 0 3px 7px 0 rgba(0,0,0,0.25);
 }
