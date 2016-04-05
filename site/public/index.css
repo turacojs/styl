@@ -845,6 +845,9 @@ table.table.centered thead tr th,
 table.table.centered tbody tr td {
   text-align: center;
 }
+table.table .shrink {
+  white-space: nowrap;
+}
 ::-webkit-input-placeholder {
   color: #bdbdbd;
 }
