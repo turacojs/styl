@@ -36,8 +36,8 @@ gulp.task('watch', gulp.parallel('watch:styles'));
 gulp.task('ws', function(cb) {
     bs = browserSync.create();
     bs.init({
-        proxy: "localhost:3000",
-        port: 4000,
+        proxy: "localhost:3124",
+        port: 3123,
         notify: false,
         open: false
     }, cb);

@@ -28,4 +28,4 @@ app.get(/^[1-9a-z\/\-]+$/, function(req, res) {
     res.render(req.path.substr(1), { category: req.path.split('/')[1] });
 });
 
-app.listen(argv.port || 3000);
+app.listen(argv.port || 3124);
