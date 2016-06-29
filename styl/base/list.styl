@@ -29,7 +29,7 @@
         list-style decimal
 
 
-.list.links
+.list.links, .list-links
     > *
         padding 0
         > a
@@ -37,12 +37,17 @@
             padding $interaction-topBottom-padding $interaction-leftRight-padding
             text-decoration none
 
+.list.buttons
+    border none
+    > *
+        border none
+
 .list .list
     border-left none
     border-right none
     margin 0 0 0 5px
 
-.list.vertical
+.list.vertical, .list-vertical
     display inline-block
     margin-bottom $default-topBottom-margin
     > *
