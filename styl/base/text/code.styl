@@ -2,6 +2,7 @@ code, kbd, pre, samp
     font-family $font-monospace
 
 code
+    white-space nowrap
     padding 1px .4rem
     color $code-color
     background $code-background
@@ -10,6 +11,7 @@ code
 
 // User input typically entered via keyboard
 kbd
+    white-space nowrap
     padding 1px .4rem
     color $kbd-color
     background $kbd-background
@@ -18,7 +20,7 @@ kbd
 
 // Blocks of code
 pre
-    margin 1rem 0
+    block-margin()
     padding 6px 10px
     color $pre-color
     background $pre-background

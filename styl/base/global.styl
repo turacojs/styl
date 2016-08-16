@@ -24,7 +24,7 @@ z-depth-1-hover()
 .align-right
     text-align right
 
-.center, .align-center
+.align-center
     text-align center
 
 .float-left
@@ -51,9 +51,6 @@ z-depth-1-hover()
     overflow hidden
     text-overflow ellipsis
 
-.no-padding
-    padding 0 !important
-
 // Dividers
 
 .divider
@@ -61,16 +58,15 @@ z-depth-1-hover()
     overflow hidden
     background-color $divider-color
 
-textarea, table, td, th, code, pre, samp, div, p, ul
+textarea, table, td, th, pre, samp, div, p, ul
     word-wrap break-word
     hyphens auto
-
 
 article
     p
         text-align justify
 
 p
-    margin $default-topBottom-margin 0
+    block-margin()
     font-size 1.05em
     line-height 1.6

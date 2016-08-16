@@ -5,6 +5,9 @@ a
     hyphens manual
     text-shadow $interaction-default-text-shadow if $interaction-default-text-shadow
 
+a[onclick]
+    cursor pointer
+
 if $interaction-current-color == $interaction-hover-color
     a:hover, a.current
         color $interaction-current-color

@@ -1,3 +1,5 @@
+support-for-ie ?= false
+
 @import '../node_modules/nib/lib/nib/border';
 @import '../node_modules/nib/lib/nib/clearfix';
 @import '../node_modules/nib/lib/nib/flex';
@@ -8,6 +10,16 @@
 @import '../node_modules/nib/lib/nib/reset';
 @import '../node_modules/nib/lib/nib/size';
 @import '../node_modules/nib/lib/nib/vendor';
+
+color(color)
+    color: color
+    font-smoothing antialiased if color is a 'color' and lightness(color) > 80%
+
+block-margin()
+    margin $default-topBottom-margin 0
+    &:first-child
+        margin-top 0
+
 
 $white-foreground-color ?= #FFF
 $black-foreground-color ?= #333

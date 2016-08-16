@@ -7,7 +7,9 @@
 </div>
 ` %>
 
-<h2 class="text-title">Percent</h2>
+<h2 class="text-title">Size</h2>
+
+<h3 class="text-paragraph-title">Percent</h3>
 
 <p>
 You can use the following classes: <code>wp-5</code>, <code>wp-10</code>, <code>wp-15</code>, <code>wp-20</code>,
@@ -42,7 +44,7 @@ You can use the following classes: <code>wp-5</code>, <code>wp-10</code>, <code>
 </div>
 ` %>
 
-<h2 class="text-title">Fixed size</h2>
+<h3 class="text-paragraph-title">Fixed size</h3>
 
 <div class="row align-center">
     <div class="col w-200" style="background: #AAF">200px</div>
@@ -70,19 +72,160 @@ You can use the following classes: <code>wp-5</code>, <code>wp-10</code>, <code>
 </div>
 ` %>
 
+<h2 class="text-title">Alignment (only with flexbox)</h2>
+
+<h3 class="text-paragraph-title">start (default) / center / end</h3>
+
+<div class="row start align-center">
+     <div class="col wp-50" style="background: #AFA">start</div>
+ </div>
+
+<div class="row center align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AFA">center</div>
+</div>
+
+<div class="row end align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AFA">end</div>
+</div>
+
+<%- code`
+<div class="row center align-center">
+    <div class="col wp-50">center</div>
+</div>
+
+<div class="row end align-end">
+    <div class="col wp-50">end</div>
+</div>
+` %>
+
+<h3 class="text-paragraph-title">space-between / space-around</h3>
+
+<div class="row space-between align-center">
+    <div class="col wp-33" style="background: #AAF">33%</div>
+    <div class="col wp-33" style="background: #AFA">33%</div>
+</div>
+
+<div class="row space-around align-center" style="margin-top: 1rem">
+    <div class="col wp-33" style="background: #AAF">33%</div>
+    <div class="col wp-33" style="background: #AFA">33%</div>
+</div>
+
+
+<%- code`
+<div class="row space-between align-center">
+    <div class="col wp-33">33%</div>
+    <div class="col wp-33">33%</div>
+</div>
+
+<div class="row space-around align-center">
+    <div class="col wp-33">33%</div>
+    <div class="col wp-33">33%</div>
+</div>
+` %>
+
+
+<h3 class="text-paragraph-title">items: start / center / end / stretch (default)</h3>
+
+<div class="row items-start align-center">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col wp-50" style="background: #AFA">items-start</div>
+</div>
+
+<div class="row items-center align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col wp-50" style="background: #AFA">items-center</div>
+</div>
+
+<div class="row items-end align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col wp-50" style="background: #AFA">items-end</div>
+</div>
+
+<div class="row items-stretch align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col wp-50" style="background: #AFA">items-stretch (default)</div>
+</div>
+
+<%- code`
+<div class="row items-start align-center">
+    <div class="col wp-50"></div>
+    <div class="col wp-50">items-start</div>
+</div>
+
+<div class="row items-center align-center">
+    <div class="col wp-50"></div>
+    <div class="col wp-50">items-center</div>
+</div>
+
+<div class="row items-end align-center">
+    <div class="col wp-50"></div>
+    <div class="col wp-50">items-end</div>
+</div>
+
+<div class="row items-stretch align-center">
+    <div class="col wp-50"></div>
+    <div class="col wp-50">items-stretch</div>
+</div>
+` %>
+
+<h3 class="text-paragraph-title">override in <code>.col</code>: start / center / end / stretch</h3>
+
+<div class="row align-center">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col start wp-50" style="background: #AFA">start</div>
+</div>
+
+<div class="row align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col center wp-50" style="background: #AFA">center</div>
+</div>
+
+<div class="row align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col end wp-50" style="background: #AFA">end</div>
+</div>
+
+<div class="row align-center" style="margin-top: 1rem">
+    <div class="col wp-50" style="background: #AAF">-<br>-<br>-</div>
+    <div class="col stretch wp-50" style="background: #AFA">stretch</div>
+</div>
+
+<%- code`
+<div class="row align-center">
+    <div class="col wp-50"></div>
+    <div class="col start wp-50">start</div>
+</div>
+
+<div class="row align-center">
+    <div class="col wp-50"></div>
+    <div class="col center wp-50">center</div>
+</div>
+
+<div class="row align-center">
+    <div class="col wp-50"></div>
+    <div class="col end wp-50">end</div>
+</div>
+
+<div class="row align-center">
+    <div class="col wp-50"></div>
+    <div class="col stretch wp-50">stretch</div>
+</div>
+` %>
+
+
 <h2 class="text-title">Space between columns</h2>
 
-<p>This use a border-left on cols except the first. Avoid it if possible and use a padding inside the col.</p>
+<p>This use a border-left on cols except the first and the last. Avoid it if possible and use a padding inside the col.</p>
 
 <div class="row spaced align-center">
-    <div class="col wp-50" style="background: #AAF">50%</div>
-    <div class="col wp-50" style="background: #AFA; border-color: red">50%</div>
+    <div class="col wp-50" style="background: red"><div style="background: #AAF">50%</div></div>
+    <div class="col wp-50" style="background: red"><div style="background: #AFA">50%</div></div>
 </div>
 <br>
 <div class="row spaced align-center">
-    <div class="col wp-33" style="background: #AAF">33%</div>
-    <div class="col wp-33" style="background: #AFA;">33%</div>
-    <div class="col wp-33" style="background: #AAF;">33%</div>
+    <div class="col wp-33" style="background: red"><div style="background: #AAF">33%</div></div>
+    <div class="col wp-33" style="background: red"><div style="background: #AFA;">33%</div></div>
+    <div class="col wp-33" style="background: red"><div style="background: #AAF;">33%</div></div>
 </div>
 
 <%- code`
@@ -90,4 +233,12 @@ You can use the following classes: <code>wp-5</code>, <code>wp-10</code>, <code>
     <div class="col wp-50">50%</div>
     <div class="col wp-50">50%</div>
 </div>
+<div class="row spaced align-center">
+    <div class="col wp-33">33%</div>
+    <div class="col wp-33">33%</div>
+    <div class="col wp-33">33%</div>
+</div>
 ` %>
+
+<p>Another way is to use <code>space-around</code> or <code>space-between</code>.</p>
+

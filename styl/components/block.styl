@@ -1,0 +1,16 @@
+$block-background ?= #fff
+$block-padding ?= 1rem
+$block-border ?= 1px solid #E0E0E0
+$block-border-radius ?= false
+
+.block
+  block-margin()
+  padding $block-padding if $block-padding
+  background $block-background if $block-background
+  border $block-border if $block-border
+  border-radius $block-border-radius if $block-border-radius
+
+  &.primary
+    background $primary-color
+    color find-best-fg-color($primary-color)
+    border none if $block-border
