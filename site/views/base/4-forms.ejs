@@ -18,27 +18,35 @@ function updateInputClasses(input) {
 
 <h3 class="text-title">Single-line text field</h3>
 
-<div class="row spaced">
-    <div class="col wp-50">
+<div class="row space-around">
+    <div class="col wp-45">
         <div class="input text">
-            <input name="user[firstName]" required="required" id="user-firstname" onkeyup="updateInputClasses(this)">
+            <input name="user[firstname]" required="required" id="user-firstname" onkeyup="updateInputClasses(this)">
             <label for="user-firstname">First Name</label>
         </div>
     </div>
-    <div class="col wp-50">
+    <div class="col wp-45">
         <div class="input text">
-            <input name="user[lastName]" required="required" id="user-lastname" onkeyup="updateInputClasses(this)">
+            <input name="user[lastname]" required="required" id="user-lastname" onkeyup="updateInputClasses(this)">
             <label for="user-lastname">Last Name</label>
+        </div>
+    </div>
+    <div class="col wp-45">
+        <div class="input text email">
+            <input name="user[email]" type="email" placeholder="Email (Placeholder)" required="required" id="user-email" onkeyup="updateInputClasses(this)">
+        </div>
+    </div>
+    <div class="col wp-45">
+        <div class="input text with-icon">
+            <input name="user[phone]" required="required" id="user-phone" onkeyup="updateInputClasses(this)">
+            <label for="user-phone">Phone</label>
+            <label class="input-icon" for="user-phone">☏</label>
         </div>
     </div>
 </div>
 
-<div class="input text email">
-    <input name="user[email]" type="email" placeholder="Email" required="required" id="user-email" onkeyup="updateInputClasses(this)">
-</div>
-
 <div class="input text">
-    <input name="user[disabled]" disabled="disabled" id="user-lastname" value="Disabled.">
+    <input name="user[disabled]" disabled="disabled" id="user-lastname">
     <label for="user-disabled">Disabled</label>
 </div>
 

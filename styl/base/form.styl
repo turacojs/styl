@@ -6,11 +6,7 @@ placeholder(grey-placeholder)
 
 .input
     position relative
-    margin-top 8px
-    margin-top $default-topBottom-margin $default-leftRight-margin
-
-    &:first-child
-        margin-top 0
+    block-margin()
 
     label
         display block
@@ -20,14 +16,12 @@ placeholder(grey-placeholder)
         position relative
 
     label + input, label + textarea, label + select
-        background red
-        color red
+        background red !important
+        color red !important
 
 .input.text input, .input.text textarea, .input select
-    margin-top 16px
     margin-top 1rem
     width 100%
-    height 32px
     height 2rem
     font-size 100%
     font-family inherit
@@ -38,24 +32,6 @@ placeholder(grey-placeholder)
     outline none
     border-radius 0 /* google chrome select */
 
-
-    + label
-        absolute left
-        color $form-label-unfocused-color
-        transition color .1s
-
-    &:not(.has-value) + label, &.has-empty-value + label
-        top 16px
-        top 1rem
-        height 32px
-        height 2rem
-        line-height 32px
-        line-height 2rem
-        font-size 100%
-        color $form-label-placeholder-color
-        cursor text
-        transition all .3s
-
     &:hover, &:hover:invalid:not(.has-value)
         border-bottom-color $form-hover-border-color if $form-hover-border-color
 
@@ -64,16 +40,34 @@ placeholder(grey-placeholder)
         border-bottom-color $form-focus-border-color if $form-focus-border-color
         box-shadow 0 1px 0 0 $form-focus-shadow-color if $form-focus-shadow-color
 
+    /* label */
+
+    + label
+        absolute left
+        color $form-label-unfocused-color
+        transition color .2s
+
+    &:not(.has-value) + label, &.has-empty-value + label
+        top 1rem
+        height 2rem
+        line-height 2rem
+        font-size 100%
+        color $form-label-placeholder-color
+        cursor text
+        transition all .3s
+
     + label, &:focus + label, &[placeholder] + label
-        top 1px
-        height auto
-        line-height inherit
+        top .2rem
+        height 1rem
+        line-height 1rem
         font-size 80%
         cursor default
 
     &:focus + label
         color $form-focus-label-color
         outline none
+
+    /* invalid */
 
     &:invalid
         box-shadow none
@@ -84,6 +78,35 @@ placeholder(grey-placeholder)
 
     &.has-value:focus:invalid + label
         color $invalid-color
+
+.input.text.with-icon
+    input
+        padding-left 2rem
+
+        + label, &:focus + label, &[placeholder] + label
+            padding-left 2rem
+
+    .input-icon
+        absolute left top 1rem
+        height 2rem
+        line-height 2rem
+        width 2rem
+        font-size 2rem
+        color $form-input-icon-unfocused-color
+        text-align center
+
+    input:focus ~ .input-icon
+        color $form-input-icon-focus-color
+
+
+.input.no-margin
+    margin 0
+
+    input, select
+        margin-top 0
+
+    .input-icon, &.select:after
+        top 0 !important
 
 .input
     /* SELECT */
@@ -198,16 +221,16 @@ placeholder(grey-placeholder)
     /* DISABLED */
 
     input:disabled, textarea:disabled, option:disabled, optgroup:disabled, select:disabled
-        background-color transparent
-        color $disabled-color
-        border-bottom 1px dotted $disabled-border-color
+        background-color $form-disabled-background if $form-disabled-background
+        color $form-disabled-color if $form-disabled-color
+        border-bottom 1px dotted $form-disabled-border-color if $form-disabled-border-color
 
     [type="radio"]:disabled + label, [type="checkbox"]:disabled + label
-        color $disabled-color
+        color $form-disabled-color if $form-disabled-color
 
     [type="radio"]:disabled, [type="checkbox"]:disabled
         &:not(:checked) + label:before
-            border-color $disabled-color
+            border-color $form-disabled-color if $form-disabled-color
 
 fieldset
     border $form-fieldset-border if $form-fieldset-border

@@ -13,7 +13,9 @@ support-for-ie ?= false
 
 color(color)
     color: color
-    font-smoothing antialiased if color is a 'color' and lightness(color) > 80%
+    if color is a 'color' and lightness(color) > 80%
+        font-smoothing antialiased
+        -moz-osx-font-smoothing grayscale
 
 block-margin()
     margin $default-topBottom-margin 0

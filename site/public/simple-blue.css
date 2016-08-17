@@ -384,6 +384,7 @@ body {
   overflow: hidden;
   color: rgba(255,255,255,0.8);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: rgba(51,51,51,0.08);
   font-weight: 300;
 }
@@ -477,21 +478,49 @@ body {
     -webkit-align-self: flex-start;
     align-self: flex-start;
     -ms-flex-item-align: start;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -o-box-flex: 0;
+    -ms-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
   }
   .row > .col.end {
     -webkit-align-self: flex-end;
     align-self: flex-end;
     -ms-flex-item-align: end;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -o-box-flex: 0;
+    -ms-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
   }
   .row > .col.center {
     -webkit-align-self: center;
     align-self: center;
     -ms-flex-item-align: center;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -o-box-flex: 0;
+    -ms-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
   }
   .row > .col.stretch {
     -webkit-align-self: stretch;
     align-self: stretch;
     -ms-flex-item-align: stretch;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -o-box-flex: 0;
+    -ms-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
   }
   .row.start {
     -webkit-box-pack: start;
@@ -732,6 +761,7 @@ kbd {
   padding: 1px 0.4rem;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: #222;
   border-radius: 2px;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.25);
@@ -742,6 +772,7 @@ pre {
   padding: 6px 10px;
   color: #eee;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: #1b2426;
   border-left: 6px solid #2580a2;
   word-break: break-all;
@@ -833,7 +864,7 @@ dfn[title] {
   text-decoration: none;
 }
 .list .list {
-  border-left: $list-border;
+  border-left: 1px solid #e0e0e0;
   border-right: none;
   margin: 0 0 0 5px;
 }
@@ -843,7 +874,7 @@ dfn[title] {
 }
 .list.vertical > * {
   display: inline-block;
-  border-right: $list-border;
+  border-right: 1px solid #e0e0e0;
 }
 .list.vertical > *:last-child {
   border-right: none;
@@ -889,8 +920,7 @@ table.table .shrink {
 }
 .input {
   position: relative;
-  margin-top: 8px;
-  margin-top: 1rem 1rem;
+  margin: 1rem 0;
 }
 .input:first-child {
   margin-top: 0;
@@ -905,16 +935,14 @@ table.table .shrink {
 .input label + input,
 .input label + textarea,
 .input label + select {
-  background: #f00;
+  background: #f00 !important;
   color: #f00;
 }
 .input.text input,
 .input.text textarea,
 .input select {
-  margin-top: 16px;
   margin-top: 1rem;
   width: 100%;
-  height: 32px;
   height: 2rem;
   font-size: 100%;
   font-family: inherit;
@@ -928,39 +956,8 @@ table.table .shrink {
   transition: all 0.3s;
   outline: none;
   border-radius: 0 /* google chrome select */;
-}
-.input.text input + label,
-.input.text textarea + label,
-.input select + label {
-  position: absolute;
-  left: 0;
-  color: #bdbdbd;
-  -webkit-transition: color 0.1s;
-  -moz-transition: color 0.1s;
-  -o-transition: color 0.1s;
-  -ms-transition: color 0.1s;
-  transition: color 0.1s;
-}
-.input.text input:not(.has-value) + label,
-.input.text textarea:not(.has-value) + label,
-.input select:not(.has-value) + label,
-.input.text input.has-empty-value + label,
-.input.text textarea.has-empty-value + label,
-.input select.has-empty-value + label {
-  top: 16px;
-  top: 1rem;
-  height: 32px;
-  height: 2rem;
-  line-height: 32px;
-  line-height: 2rem;
-  font-size: 100%;
-  color: #bdbdbd;
-  cursor: text;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
+/* label */
+/* invalid */
 }
 .input.text input:focus,
 .input.text textarea:focus,
@@ -974,6 +971,36 @@ table.table .shrink {
 }
 .input.text input + label,
 .input.text textarea + label,
+.input select + label {
+  position: absolute;
+  left: 0;
+  color: #bdbdbd;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.input.text input:not(.has-value) + label,
+.input.text textarea:not(.has-value) + label,
+.input select:not(.has-value) + label,
+.input.text input.has-empty-value + label,
+.input.text textarea.has-empty-value + label,
+.input select.has-empty-value + label {
+  top: 1rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 100%;
+  color: #bdbdbd;
+  cursor: text;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.input.text input + label,
+.input.text textarea + label,
 .input select + label,
 .input.text input:focus + label,
 .input.text textarea:focus + label,
@@ -981,9 +1008,9 @@ table.table .shrink {
 .input.text input[placeholder] + label,
 .input.text textarea[placeholder] + label,
 .input select[placeholder] + label {
-  top: 1px;
-  height: auto;
-  line-height: inherit;
+  top: 0.2rem;
+  height: 1rem;
+  line-height: 1rem;
   font-size: 80%;
   cursor: default;
 }
@@ -1010,6 +1037,39 @@ table.table .shrink {
 .input.text textarea.has-value:focus:invalid + label,
 .input select.has-value:focus:invalid + label {
   color: #f00;
+}
+.input.text.with-icon input {
+  padding-left: 2rem;
+}
+.input.text.with-icon input + label,
+.input.text.with-icon input:focus + label,
+.input.text.with-icon input[placeholder] + label {
+  padding-left: 2rem;
+}
+.input.text.with-icon .input-icon {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  height: 2rem;
+  line-height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  color: #7d7d7d;
+  text-align: center;
+}
+.input.text.with-icon input:focus ~ .input-icon {
+  color: inherit;
+}
+.input.no-margin {
+  margin: 0;
+}
+.input.no-margin input,
+.input.no-margin select {
+  margin-top: 0;
+}
+.input.no-margin .input-icon,
+.input.no-margin.select:after {
+  top: 0 !important;
 }
 .input select {
   -webkit-appearance: none;
@@ -1150,7 +1210,7 @@ table.table .shrink {
 .input option:disabled,
 .input optgroup:disabled,
 .input select:disabled {
-  background-color: transparent;
+  background-color: rgba(111,111,111,0.1);
   color: #c7c7c7;
   border-bottom: 1px dotted #b9b8b9;
 }
@@ -1210,6 +1270,7 @@ legend {
   background: #2580a2;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .label.success,
 .badge.success {
@@ -1227,6 +1288,7 @@ legend {
   background: #777;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   border-radius: 1em;
   vertical-align: middle;
   margin-top: -2px;
@@ -1247,6 +1309,7 @@ legend {
   background: #2580a2;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   border: none;
 }
 button,
@@ -1269,6 +1332,7 @@ button,
   border: none;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-shadow: $button-textShadow;
   padding: 0.6rem 1rem;
   cursor: pointer;
@@ -1293,6 +1357,7 @@ button:hover,
   background: #288aaf;
   color: #fff;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2), 0 3px 7px 0 rgba(0,0,0,0.25);
   box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2), 0 3px 7px 0 rgba(0,0,0,0.25);
 }
