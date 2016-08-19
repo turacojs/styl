@@ -1,0 +1,21 @@
+$loading-bar-height ?= 2px
+$loading-bar-z-index ?= 2
+$loading-bar-background ?= #fff
+$loading-bar-color ?= $primary-color
+
+.loading-bar
+  fixed top left right
+  display none
+  width 100%
+  height $loading-bar-height
+  z-index $loading-bar-z-index
+  pointer-events none
+  background $loading-bar-background
+  border-radius 0 1px 1px 0
+  boxShadow 1px 1px 1px rgba(0,0,0,0.4)
+  transition width .4s
+
+  .progress
+    height $loading-bar-height
+    background $loading-bar-color
+    width 1%
