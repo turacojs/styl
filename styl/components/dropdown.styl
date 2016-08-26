@@ -1,33 +1,36 @@
 .dropdown
-    position relative
-    padding 0 .2rem
-    cursor default
+  position relative
+  padding 0 .2rem
+  cursor default
 
+  &.button
+    padding $button-topBottom-padding $button-leftRight-padding
+
+  > .list
+    z-depth-1()
+    margin 0 !important // override `.list .list` margin
+    visibility hidden
+    opacity 0
+    absolute left 0 right 0
+    top 100%
+    z-index 1
+    transition visibility 0s linear .2s, opacity .3s;
+
+  &:hover, .open
+    z-depth-1()
     > .list
-        z-depth-1()
-        margin 0 !important // override `.list .list` margin
-        visibility hidden
-        opacity 0
-        absolute left 0 right 0
-        top 100%
-        z-index 1
-        transition visibility 0s linear .2s, opacity .3s;
-
-    &:hover, .open
-        z-depth-1()
-        > .list
-            visibility visible
-            opacity 1
-            transition-delay 0s
-            border-left none
-            border-right none
+      visibility visible
+      opacity 1
+      transition-delay 0s
+      border-left none
+      border-right none
 
 
-    &::after
-        display inline-block
-        content "▼"
-        font-size .7em
-        vertical-align middle
-        margin-left .3rem
-        border-left 1px solid
-        padding-left .3rem
+  &::after
+    display inline-block
+    content "▼"
+    font-size .7em
+    vertical-align middle
+    margin-left .3rem
+    border-left 1px solid
+    padding-left .3rem
