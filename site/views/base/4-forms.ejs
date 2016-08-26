@@ -54,7 +54,9 @@ function updateInputClasses(input) {
 <h3 class="text-title">Textarea</h3>
 
 <div class="input text textarea">
-    <textarea name="user[bio]" placeholder="Type anything you like here" id="user-bio" onkeyup="updateInputClasses(this)"></textarea>
+    <textarea name="user[bio]" placeholder="Type anything you like here" id="user-bio"
+              onkeyup="updateInputClasses(this); if (this.scrollHeight > this.clientHeight) this.style.height = this.scrollHeight + 'px'"
+    ></textarea>
 </div>
 
 <h2 class="text-title">Select</h2>

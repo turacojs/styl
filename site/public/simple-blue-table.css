@@ -366,6 +366,9 @@ body {
   font-size: 1.2em;
   margin-top: 1rem;
 }
+.text-title + .text-subhead {
+  margin-top: -0.5rem;
+}
 .text-paragraph-title {
   font-weight: 500;
   font-size: 1.1em;
@@ -618,6 +621,9 @@ body {
 .row.spaced > .col:last-child {
   padding-right: 0;
 }
+.w-100 {
+  width: 100px;
+}
 .w-150 {
   width: 150px;
 }
@@ -836,8 +842,11 @@ sub {
 }
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted;
+  text-decoration: dotted underline;
   cursor: help;
+}
+time[title] {
+  text-decoration: dotted underline;
 }
 .list {
   margin: 1rem 0;
@@ -866,7 +875,7 @@ dfn[title] {
   list-style: decimal;
 }
 .list.multiline > * {
-  margin: 1rem 0;
+  padding: 0.5rem 0;
   line-height: inherit;
 }
 .list.multiline > *:last-child {
@@ -894,6 +903,11 @@ dfn[title] {
 }
 .list.block {
   padding: 0;
+}
+.list.block > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 table.table {
   width: 100%;
@@ -1089,6 +1103,7 @@ table.table .shrink {
   -moz-appearance: none;
   appearance: none;
   display: inline-block;
+  padding-right: 1.5rem;
 }
 .input select:focus {
   outline: none;
@@ -1097,7 +1112,7 @@ table.table .shrink {
   border-right: 0;
 }
 .input select:-moz-focusring {
-/* to avoid the ugly "outline" in firefox */
+/* to avoid the "outline" in firefox */
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1116,7 +1131,7 @@ table.table .shrink {
   font-size: 60%;
   line-height: 2rem;
   height: 2rem;
-  padding: 0 0.5rem;
+  padding-right: 0.5rem;
   pointer-events: none;
 }
 :root *> .input [type="radio"],
@@ -1406,6 +1421,10 @@ button.flat.disabled,
 .dropdown {
   position: relative;
   padding: 0 0.2rem;
+  cursor: default;
+}
+.dropdown.button {
+  padding: 0.6rem 1rem;
 }
 .dropdown > .list {
   -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15), 0 2px 5px 0 rgba(0,0,0,0.2);
@@ -1457,6 +1476,30 @@ button.flat.disabled,
 }
 .icon:last-child {
   margin-right: 0;
+}
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  width: 100%;
+  height: 2px;
+  z-index: 2;
+  pointer-events: none;
+  background: #fff;
+  border-radius: 0 1px 1px 0;
+  boxShadow: 1px 1px 1px rgba(0,0,0,0.4);
+  -webkit-transition: width 0.4s;
+  -moz-transition: width 0.4s;
+  -o-transition: width 0.4s;
+  -ms-transition: width 0.4s;
+  transition: width 0.4s;
+}
+.loading-bar .progress {
+  height: 2px;
+  background: #2580a2;
+  width: 1%;
 }
 .nav-col {
   position: fixed;
