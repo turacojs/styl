@@ -3,7 +3,7 @@
     flex 0 1 auto
     width 100%
 
-    > .col
+    > *
         display table-cell
         vertical-align top /* Opera */
 
@@ -14,7 +14,7 @@
         flex-flow row wrap
         align-items stretch
 
-        > .col
+        > *
             flex-grow 1
             display block
 
@@ -65,7 +65,7 @@
             align-items stretch
 
 .row.spaced
-    > .col
+    > *
         padding-left .5rem
         padding-right .5rem
         &:first-child
@@ -88,15 +88,17 @@ for w in 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100
     width 66.66%
 
 @media $small-and-down
-    .row-responsive
+    .row-responsive, .responsive
         display block
-        > .col
+
+        > *
             display block
             width auto
             // [class*=' wp-'], [class*=' w-']
             // width auto
+
         &.spaced
-            > .col
+            > *
                 padding-left 0
                 padding-right 0
                 padding-top .5rem
